@@ -2,7 +2,7 @@
 const url = require('url');
 const { StringDecoder } = require('string_decoder');
 const routes = require('../routes/routes');
-const { notFoundHandler } = require('../handlers/routeHandlers/notFoundHandler');
+const { notFoundHandler } = require('../routeHandlers/notFoundHandler');
 const { parseJSON } = require('./utilities');
 
 // modue scaffolding
