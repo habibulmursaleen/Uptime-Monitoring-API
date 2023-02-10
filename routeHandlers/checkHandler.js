@@ -1,8 +1,8 @@
 // dependencies
-const data = require('../lib/data');
-const { parseJSON, createRandomString } = require('../helpers/utilities');
+const data = require('../../lib/data');
+const { parseJSON, createRandomString } = require('../../helpers/utilities');
 const tokenHandler = require('./tokenHandler');
-const { maxChecks } = require('../helpers/environments');
+const { maxChecks } = require('../../helpers/environments');
 
 // module scaffolding
 const handler = {};
@@ -10,15 +10,15 @@ const handler = {};
 handler.checkHandler = (requestProperties, callback) => {
     const acceptedMethods = ['get', 'post', 'put', 'delete'];
     if (acceptedMethods.indexOf(requestProperties.method) > -1) {
-        handler.check[requestProperties.method](requestProperties, callback);
+        handler._check[requestProperties.method](requestProperties, callback);
     } else {
         callback(405);
     }
 };
 
-handler.check = {};
+handler._check = {};
 
-handler.check.post = (requestProperties, callback) => {
+handler._check.post = (requestProperties, callback) => {
     // validate inputs
     const protocol =
         typeof requestProperties.body.protocol === 'string' &&
@@ -140,7 +140,7 @@ handler.check.post = (requestProperties, callback) => {
     }
 };
 
-handler.check.get = (requestProperties, callback) => {
+handler._check.get = (requestProperties, callback) => {
     const id =
         typeof requestProperties.queryStringObject.id === 'string' &&
         requestProperties.queryStringObject.id.trim().length === 20
@@ -182,7 +182,7 @@ handler.check.get = (requestProperties, callback) => {
     }
 };
 
-handler.check.put = (requestProperties, callback) => {
+handler._check.put = (requestProperties, callback) => {
     const id =
         typeof requestProperties.body.id === 'string' &&
         requestProperties.body.id.trim().length === 20
@@ -283,7 +283,7 @@ handler.check.put = (requestProperties, callback) => {
     }
 };
 
-handler.check.delete = (requestProperties, callback) => {
+handler._check.delete = (requestProperties, callback) => {
     const id =
         typeof requestProperties.queryStringObject.id === 'string' &&
         requestProperties.queryStringObject.id.trim().length === 20
@@ -379,4 +379,4 @@ handler.check.delete = (requestProperties, callback) => {
     }
 };
 
-module.exports = handler;
+module.exports = handler; 

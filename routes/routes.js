@@ -1,11 +1,10 @@
-// Dependencies
-const { sampleHandler } = require('../routeHandlers/sampleHandlers');
+// dependencies
+const { sampleHandler } = require('../routeHandlers/sampleHandler');
 const { userHandler } = require('../routeHandlers/userHandler');
 const { tokenHandler } = require('../routeHandlers/tokenHandler');
 const { checkHandler } = require('../routeHandlers/checkHandler');
 
 const routes = {
-    // route name : which function to hit
     sample: sampleHandler,
     user: userHandler,
     token: tokenHandler,
