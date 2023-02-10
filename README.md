@@ -19,12 +19,8 @@ Please follow the below instructions to run this project in your machine:
    ```sh
    npm install
    ```
-3. Checkout to branch lesson-7
-   ```sh
-   git checkout lesson-7
-   ```
-4. Run the app
+3. Run the app
    ```sh
    npm start
    ```
-5. Your app should be available in http://localhost:3000
+4. The app should be available in http://localhost:3000
