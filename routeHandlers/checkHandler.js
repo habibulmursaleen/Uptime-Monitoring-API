@@ -1,8 +1,8 @@
 // dependencies
-const data = require('../../lib/data');
-const { parseJSON, createRandomString } = require('../../helpers/utilities');
+const data = require('../lib/data');
+const { parseJSON, createRandomString } = require('../helpers/utilities');
 const tokenHandler = require('./tokenHandler');
-const { maxChecks } = require('../../helpers/environments');
+const { maxChecks } = require('../helpers/environments');
 
 // module scaffolding
 const handler = {};
@@ -65,7 +65,7 @@ handler._check.post = (requestProperties, callback) => {
                 // lookup the user data
                 data.read('users', userPhone, (err2, userData) => {
                     if (!err2 && userData) {
-                        tokenHandler._token.verify(token, userPhone, (tokenIsValid) => {
+                        tokenHandler.token.verify(token, userPhone, (tokenIsValid) => {
                             if (tokenIsValid) {
                                 const userObject = parseJSON(userData);
                                 const userChecks =

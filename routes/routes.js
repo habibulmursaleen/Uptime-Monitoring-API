@@ -1,5 +1,5 @@
 // dependencies
-const { sampleHandler } = require('../routeHandlers/sampleHandler');
+const { sampleHandler } = require('../routeHandlers/sampleHandlers');
 const { userHandler } = require('../routeHandlers/userHandler');
 const { tokenHandler } = require('../routeHandlers/tokenHandler');
 const { checkHandler } = require('../routeHandlers/checkHandler');
